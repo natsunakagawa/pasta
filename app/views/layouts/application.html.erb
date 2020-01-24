@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pasta</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row" style="background-color: black;">
+        
+        <div class="col-lg-8">
+          <h3 class="pull-left" style="color: white;">Bookers</h3>
+        </div>
+
+        <div class="col-lg-4">
+          <nav>
+            <ul class="nav navbar-nav text-muted" style="color: darkgray;">
+
+              <% if user_signed_in? %>
+
+                <li class="text-muted">
+                  <%= link_to user_path(current_user) do %>
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to users_path do %>
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to books_path do %>
+                    <span class="glyphicon glyphicon-book" aria-hidden="true"></span> Books
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> logout
+                  <% end %>
+                </li>
+
+              <% else %>
+                <li class="text-muted header-list">
+                  <%= link_to root_path do %>
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to '/home/about' do %>
+                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span> About
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path do %>
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> sign up
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_session_path do %>
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login
+                  <% end %>
+                </li>
+
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
