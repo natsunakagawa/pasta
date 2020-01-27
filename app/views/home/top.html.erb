@@ -19,8 +19,12 @@
 
 	<div class="col-lg-6">
 		<div class="text-center">
-			<button type="button" class="btn btn-info btn-block">Log in</button>
-			<button type="button" class="btn btn-success btn-block">Sign Up</button>
+			<%= link_to new_user_session_path do %>
+				<button type="button" class="btn btn-info btn-block">Log in</button>
+			<% end %>
+			<%= link_to new_user_registration_path do %>
+				<button type="button" class="btn btn-success btn-block">Sign Up</button>
+			<% end %>
 		</div>
 	</div>
 </div>
