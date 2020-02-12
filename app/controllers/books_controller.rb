@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
 	before_action :authenticate_user!
+	before_action :correct_user, only: [:edit, :update]
 
 	def index
 		@book = Book.new
@@ -36,7 +37,23 @@ class BooksController < ApplicationController
 
 	def edit
 		@book = Book.find(params[:id])
-		
+	end
+
+	def update
+		@book = Book.find(params[:id])
+		if @book.update(book_params)
+			flash[:create] = "You have updated book successfully"
+			redirect_to book_path(@book)
+		else
+			render 'show'
+		end
+	end
+
+	def correct_user
+		@book = Book.find(params[:id])
+		if @book.user != current_user
+			redirect_to books_path		
+		end		
 	end
 
 	private

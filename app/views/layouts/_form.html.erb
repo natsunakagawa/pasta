@@ -1,11 +1,4 @@
-<div class="col-lg-3">
-    <div class="flash">
-    	<% if flash[:create] %>
-        	<%= flash[:create] %>
-         <% elsif flash[:update] %>
-            <%= flash[:update] %>
-         <% end %>
-     </div>
+<div class="col-xs-3">
 	<div class="user-information">
 		<h1>User info</h1>
 		<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
@@ -43,21 +36,21 @@
 		<% end %>
 	</div>
 
-	<div class="visible-lg-block text-left">
+	<div class="visible-xs-block text-left">
 		<h1>New book</h1>
 	</div>
 
 	<%= form_for(book) do |f| %>
-		<div class="visible-lg-block text-left">
+		<div class="block">
 			<%= f.label :Title %>
 		</div>
-		<div class="visible-lg-block">
+		<div class="block">
 			<%= f.text_field :title %>
 		</div>
-		<div class="visible-lg-block text-left">
+		<div class="block">
 			<%= f.label :Opinion %>
 		</div>
-		<div class="visible-lg-block">
+		<div class="block">
 			<%= f.text_area :body %>
 		</div>
 		<%= f.submit('Create Book', class: 'btn btn-primary btn-block') %>
