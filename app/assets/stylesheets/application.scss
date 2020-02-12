@@ -16,6 +16,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nav {
+	color: silver;
+}
 .notice {
 	color: green;
 }
@@ -27,4 +30,7 @@
 }
 .update {
 	color: green;
+}
+.block {
+	display: block;
 }

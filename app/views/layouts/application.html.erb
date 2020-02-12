@@ -13,17 +13,17 @@
     <div class="container-fluid">
       <div class="row" style="background-color: black;">
         
-        <div class="col-lg-8">
+        <div class="col-xs-8">
           <h3 class="pull-left" style="color: white;">Bookers</h3>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-xs-4">
           <nav>
-            <ul class="nav navbar-nav text-muted" style="color: darkgray;">
+            <ul class="nav navbar-nav" style="color: silver;">
 
               <% if user_signed_in? %>
 
-                <li class="text-muted">
+                <li>
                   <%= link_to user_path(current_user) do %>
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                   <% end %>
@@ -45,7 +45,7 @@
                 </li>
 
               <% else %>
-                <li class="text-muted header-list">
+                <li>
                   <%= link_to root_path do %>
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                   <% end %>
@@ -82,8 +82,8 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-9"></div>
-        <div class="col-lg-3">
+        <div class="col-xs-9"></div>
+        <div class="col-xs-3">
           <p>CopyRight Infratop.inc</p>
         </div>
       </div>

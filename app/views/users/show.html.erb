@@ -1,3 +1,9 @@
-<%= render 'layouts/form', user: @user, book: @book %>
+<% if @user.errors.any? %>
+	<%= render 'layouts/user_edit', user: @user %>
 
-<%= render 'layouts/table', books: @books %>
+<% else %>
+
+	<%= render 'layouts/form', user: @user, book: @book %>
+
+	<%= render 'layouts/table', books: @books %>
+<% end %>
