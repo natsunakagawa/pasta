@@ -25,7 +25,9 @@
 
                 <li>
                   <%= link_to user_path(current_user) do %>
+                    <div style="color: silver;">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                  </div>
                   <% end %>
                 </li>
                 <li>
@@ -64,8 +66,8 @@
                   <%= link_to new_user_session_path do %>
                     <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> login
                   <% end %>
-                </li>
 
+                </li>
               <% end %>
             </ul>
           </nav>
